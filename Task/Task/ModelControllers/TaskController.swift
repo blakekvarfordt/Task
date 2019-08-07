@@ -27,7 +27,6 @@ class TaskController {
     ]
     
    
-    
     func fetchTasks() -> [Task] {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         do {
@@ -57,7 +56,7 @@ class TaskController {
     }
     
     // Remove
-    func remove(task: Task, name: String, notes: String?, due: Date?) {
+    func remove(task: Task) {
         CoreDataStack.context.delete(task)
         saveToPersistentStore()
     }

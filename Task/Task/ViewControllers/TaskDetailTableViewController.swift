@@ -10,6 +10,9 @@ import UIKit
 
 class TaskDetailTableViewController: UITableViewController {
 
+    var task: Task?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
