@@ -10,6 +10,8 @@ import UIKit
 
 class TaskTableViewController: UITableViewController {
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,7 @@ class TaskTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
 
     // MARK: - Table view data source
 
@@ -28,13 +31,11 @@ class TaskTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath)
-        let task = TaskController.shared.mockTasks[indexPath.row]
+        let task = TaskController.shared.tasks[indexPath.row]
         cell.textLabel?.text = task.name
         
         return cell
     }
-    
-
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -45,8 +46,6 @@ class TaskTableViewController: UITableViewController {
         }
     }
  
-
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToDetailVC" {

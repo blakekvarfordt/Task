@@ -17,14 +17,17 @@ class TaskController {
     
     init() {
         tasks = fetchTasks()
+        
+        let mockTasks: [Task] = [
+            Task(name: "mike", notes: "asdfafbqe", due: Date()),
+            Task(name: "jim", notes: "adfbebtbqtqer", due: Date()),
+            Task(name: "pam", notes: "eadvadvadad", due: Date()),
+            Task(name: "andy", notes: "adfabfwrtwrty", due: Date())
+        ]
+        self.tasks = mockTasks
     }
     
-    var mockTasks: [Task] = [
-        Task(name: "mike", notes: "asdfafbqe", due: Date()),
-        Task(name: "jim", notes: "adfbebtbqtqer", due: Date()),
-        Task(name: "pam", notes: "eadvadvadad", due: Date()),
-        Task(name: "andy", notes: "adfabfwrtwrty", due: Date())
-    ]
+    
     
    
     func fetchTasks() -> [Task] {
